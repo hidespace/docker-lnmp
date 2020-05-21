@@ -1,0 +1,15 @@
+version: 3
+services:
+    mysql:
+        image: navioo/mysql5.7:1.0
+        restart: always
+        container_name: mysql5.7
+        tty: true
+        ports:
+            - "3306:3306"
+        volumes: 
+            - /ws/volumes/mysql/conf.d:/etc/mysql/conf.d
+            - /ws/volumes/mysql/data:/var/lib/mysql
+        environment: 
+            - MYSQL_ROOT_PASSWORD=root
+            - TZ=Asia/Shanghai
