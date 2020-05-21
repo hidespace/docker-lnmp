@@ -8,11 +8,11 @@ services:
         ports: 
             - "9000:9000"
         volumes: 
+            - /ws/www:/web
             - /ws/volumes/php-fpm7.2/conf/php.ini:/etc/php.ini
             - /ws/volumes/php-fpm7.2/conf/php-fpm.conf:/etc/php-fpm.conf
             - /ws/volumes/php-fpm7.2/conf/php-fpm.d:/etc/php-fpm.d
             - /ws/volumes/php-fpm7.2/log/php-fpm/error.log:/var/log/php-fpm/error.log
-            #- /ws/volumes/php-fpm7.2/logs/php-fpm.log:/var/log/php-fpm.log
         environment: 
             - TZ=Asia/Shanghai
 
