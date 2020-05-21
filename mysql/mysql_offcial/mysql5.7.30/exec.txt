@@ -1,0 +1,1 @@
+docker build -t navioo/mysql:5.7.30 .

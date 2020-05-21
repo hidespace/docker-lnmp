@@ -1,0 +1,1 @@
+docker build -t navioo/redis5.0.9:1.0 .

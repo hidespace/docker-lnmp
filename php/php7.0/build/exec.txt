@@ -1,0 +1,1 @@
+docker build -t navioo/php-fpm7.0:1.0 .
