@@ -1,0 +1,1 @@
+docker build -t navioo/nginx:1.16.1 .

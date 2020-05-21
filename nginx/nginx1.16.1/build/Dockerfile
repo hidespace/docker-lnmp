@@ -1,8 +1,8 @@
-FROM nginx:1.14.2
+FROM nginx:1.16.1
 
 MAINTAINER rocky <RockyJiang21@outlook.com>
 
-LABEL version="nginx:1.14.2" created_at="2020/05/21"
+LABEL version="nginx:1.16.1" created_at="2020/05/21"
 
 ENV TIME_ZONE Asia/Shanghai
 
