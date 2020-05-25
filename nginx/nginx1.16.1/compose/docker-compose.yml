@@ -1,0 +1,18 @@
+version: "3"
+services: 
+    nginx:
+        image: navioo/nginx:1.16.1
+        restart: always
+        container_name: nginx1.16.1
+        tty: true
+        ports: 
+            - "80:80"
+            - "443:443"
+        volumes: 
+            - /ws/www:/web
+            - /ws/volumes/nginx1.16.1/conf/nginx.conf:/etc/nginx/nginx.conf
+            - /ws/volumes/nginx1.16.1/conf/conf.d:/etc/nginx/conf.d
+            - /ws/volumes/nginx1.16.1/logs:/var/log/nginx
+        environment: 
+            - TZ=Asia/Shanghai
+

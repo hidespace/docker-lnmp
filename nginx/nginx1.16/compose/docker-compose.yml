@@ -4,7 +4,7 @@ services:
         image: navioo/nginx1.16:1.0
         restart: always
         container_name: nginx1.6
-        tty: tty
+        tty: true
         ports: 
             - "80:80"
             - "443:443"
