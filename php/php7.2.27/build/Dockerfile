@@ -31,11 +31,13 @@ php72w-xml.x86_64 \
 php72w-opcache.x86_64 \
 php72w-pecl-igbinary.x86_64 \
 php72w-pecl-redis.x86_64 \
-php72w-devel \
-&& yum install -y gcc-c++ make openssl-devel \
+php72w-devel
+
+RUN yum install -y gcc-c++ make openssl-devel \
 && printf "yes" | pecl install -f swoole \
-echo extension=swoole.so >> /etc/php.d/sockets.ini \
-&& yum install -y cmake \
+&& echo extension=swoole.so >> /etc/php.d/sockets.ini
+
+RUN yum install -y cmake \
 && cd src/rabbitmq-c-0.10.0 \
 && mkdir build && cd build \
 && cmake .. && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/rabbitmq-c .. \
@@ -44,7 +46,6 @@ echo extension=swoole.so >> /etc/php.d/sockets.ini \
 && ln -s /usr/local/rabbitmq-c/lib64 /usr/local/rabbitmq-c/lib \
 && printf "/usr/local/rabbitmq-c" | pecl install amqp \
 echo extension=amqp.so >> /etc/php.d/sockets.ini
-
 
 ENTRYPOINT ["/usr/sbin/php-fpm"]
 
