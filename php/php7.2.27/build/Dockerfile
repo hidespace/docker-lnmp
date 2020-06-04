@@ -45,7 +45,7 @@ RUN yum install -y cmake \
 && make && make install \
 && ln -s /usr/local/rabbitmq-c/lib64 /usr/local/rabbitmq-c/lib \
 && printf "/usr/local/rabbitmq-c" | pecl install amqp \
-echo extension=amqp.so >> /etc/php.d/sockets.ini
+&& echo extension=amqp.so >> /etc/php.d/sockets.ini
 
 ENTRYPOINT ["/usr/sbin/php-fpm"]
 
