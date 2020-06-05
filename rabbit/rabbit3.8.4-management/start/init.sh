@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-APP_PATH=/ws/volumes
-APP_NAME=rabbitmq3.8.4m
+WS_PATH=/ws/volumes
+RABBITMQ=rabbitmq3.8.4m
 
-mkdir -p $APP_PATH/$APP_NAME/{data,log}
-cp -rf ./conf $APP_PATH/$APP_NAME
+mkdir -p $WS_PATH/$RABBITMQ/{data,log,conf}
+/bin/cp -rf ./conf/* $WS_PATH/$RABBITMQ/conf
 
 #docker-compose up -d
 

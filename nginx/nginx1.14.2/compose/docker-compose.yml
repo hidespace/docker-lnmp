@@ -12,7 +12,7 @@ services:
             - /ws/www:/web
             - /ws/volumes/nginx1.14.2/conf/nginx.conf:/etc/nginx/nginx.conf
             - /ws/volumes/nginx1.14.2/conf/conf.d:/etc/nginx/conf.d
-            - /ws/volumes/nginx1.14.2/logs:/var/log/nginx
+            - /ws/volumes/nginx1.14.2/log:/var/log/nginx
         environment: 
             - TZ=Asia/Shanghai
 

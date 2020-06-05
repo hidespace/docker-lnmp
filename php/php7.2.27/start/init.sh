@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /ws/volumes/php-fpm7.2.27/log/php-fpm
-touch /ws/volumes/php-fpm7.2.27/log/php-fpm/error.log
-cp -rf ./conf /ws/volumes/php-fpm7.2.27
+WS_PATH=/ws/volumes
+PHP=php-fpm7.2.27
+
+mkdir -p $WS_PATH/$PHP/{conf,log}
+touch $WS_PATH/$PHP/log/error.log
+/bin/cp -rf ./conf/* $WS_PATH/$PHP/conf
 
 #docker-compose up -d
-
-

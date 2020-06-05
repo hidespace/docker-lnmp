@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-APP_PATH=/ws/volumes
-APP_NAME=mysql5.7.30
+WS_PATH=/ws/volumes
+MYSQL=mysql5.7.30
 
-mkdir -p $APP_PATH/$APP_NAME/{data,log}
-touch $APP_PATH/$APP_NAME/log/error.log
-chmod a+rwx $APP_PATH/$APP_NAME/log/error.log
-cp -rf ./conf.d $APP_PATH/$APP_NAME
+mkdir -p $WS_PATH/$MYSQL/{data,log,conf.d}
+touch $WS_PATH/$MYSQL/log/error.log
+chmod a+rwx $WS_PATH/$MYSQL/log/error.log
+/bin/cp -rf ./conf.d/* $WS_PATH/$MYSQL/conf.d
 
 #docker-compose up -d

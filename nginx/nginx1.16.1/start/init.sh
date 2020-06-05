@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-mkdir -p /ws/volumes/nginx1.16.1/logs
-cp -rf ./conf /ws/volumes/nginx1.16.1
+WS_PATH=/ws/volumes
+NGINX=nginx1.16.1
+
+mkdir -p $WS_PATH/$NGINX/{conf,log}
+/bin/cp -rf ./conf/* $WS_PATH/$NGINX/conf
 
 #docker-compose up -d
-
-

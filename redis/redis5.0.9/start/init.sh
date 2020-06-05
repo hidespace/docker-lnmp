@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /ws/volumes/redis5.0.9/data
-cp -rf ./conf /ws/volumes/redis5.0.9
+WS_PATH=/ws/volumes
+REDIS=redis5.0.9
+
+mkdir -p $WS_PATH/$REDIS/{data,conf}
+/bin/cp -rf ./conf/* $WS_PATH/$REDIS/conf
 
 #docker-compose up -d
 

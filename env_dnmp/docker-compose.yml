@@ -15,6 +15,10 @@ services:
             - /ws/volumes/nginx1.16.1/logs:/var/log/nginx
         environment: 
             - TZ=Asia/Shanghai
+        depends_on:
+          - php-fpm72
+        links:
+          - php-fpm72:php-fpm72
     php-fpm72:
         image: navioo/php-fpm:7.2.27
         restart: always
@@ -30,18 +34,27 @@ services:
             - /ws/volumes/php-fpm7.2.27/log/php-fpm/error.log:/var/log/php-fpm/error.log
         environment: 
             - TZ=Asia/Shanghai
-    mysql57:
-        image: navioo/mysql5.7:1.0
+        depends_on:
+          - mysql
+          - redis
+          - rabbitmq
+        links:
+          - mysql:mysql
+          - redis:redis
+          - rabbitmq:rabbitmq
+    mysql:
+        image: navioo/mysql:5.7.27
         restart: always
-        container_name: mysql5.7
+        container_name: mysql5.7.27
         tty: true
         ports:
             - "3306:3306"
-        volumes: 
-            - /ws/volumes/mysql5.7/conf.d:/etc/mysql/conf.d
-            - /ws/volumes/mysql5.7/data:/var/lib/mysql
-        environment: 
-            - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - /ws/volumes/mysql5.7.27/conf.d:/etc/mysql/conf.d
+            - /ws/volumes/mysql5.7.27/data:/var/lib/mysql
+            - /ws/volumes/mysql5.7.27/log/error.log:/var/log/mysql/error.log
+        environment:
+            - MYSQL_ROOT_PASSWORD=q5xt@zX71w
             - TZ=Asia/Shanghai
     redis:
         image: navioo/redis:5.0.9
@@ -55,4 +68,18 @@ services:
             - /ws/volumes/redis5.0.9/data:/data
         environment: 
             - TZ=Asia/Shanghai
+    rabbitmq:
+        image: navioo/rabbitmq:3.8.4m
+            restart: always
+            container_name: rabbitmq3.8.4m
+            tty: true
+            ports:
+                - "5672:5672"
+                - "15672:15672"
+            volumes:
+                - /ws/volumes/rabbitmq3.8.4m/conf:/etc/rabbitmq
+                - /ws/volumes/rabbitmq3.8.4m/data:/var/lib/rabbitmq
+                - /ws/volumes/rabbitmq3.8.4m/log:/var/log/rabbitmq
+            environment:
+                - TZ=Asia/Shanghai
 

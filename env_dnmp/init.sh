@@ -2,28 +2,30 @@
 
 WS_PATH=/ws/volumes
 
-NGINX=nginx
-PHP=php
-MYSQL=mysql
-REDIS=redis
-RABBITMQ=rabbitmq
+NGINX=nginx1.16.1
+PHP72=php7.2.27
+MYSQL=mysql5.7.27
+REDIS=redis5.0.9
+RABBITMQ=rabbitmq3.8.4m
 
-mkdir -p $WS_PATH/{$NGINX,$PHP,$MYSQL,$REDIS,$RABBITMQ}
-mkdir -p $WS_PATH/$NGINX/logs
-cp -rf ./conf/nginx $WS_PATH/$NGINX
 
-mkdir -p $WS_PATH/$PHP/log/php-fpm
-touch $WS_PATH/$PHP/log/php-fpm/error.log
-cp -rf ./conf/php $WS_PATH/$PHP
+mkdir -p $WS_PATH/$NGINX/{conf,log}
+/bin/cp -rf ./conf/nginx/* $WS_PATH/$NGINX/conf
 
-mkdir -p $WS_PATH/$MYSQL/{data,log}
-cp -rf ./conf/mysql $WS_PATH/$MYSQL
+mkdir -p $WS_PATH/$PHP72/{conf,log}
+touch $WS_PATH/$PHP72/log/error.log
+/bin/cp -rf ./conf/php/* $WS_PATH/$PHP72/conf
 
-mkdir -p $WS_PATH/$REDIS/data
-cp -rf ./conf/redis $WS_PATH/$REDIS
+mkdir -p $WS_PATH/$MYSQL/{data,log,conf.d}
+touch $WS_PATH/$MYSQL/log/error.log
+chmod a+rwx $WS_PATH/$MYSQL/log/error.log
+/bin/cp -rf ./conf/mysql/conf.d/* $WS_PATH/$MYSQL/conf.d
 
-mkdir -p $WS_PATH/$RABBITMQ/{data,log}
-cp -rf ./conf/rabbitmq $WS_PATH/$RABBITMQ
+mkdir -p $WS_PATH/$REDIS/{data,conf}
+/bin/cp -rf ./conf/redis/conf/* $WS_PATH/$REDIS/conf
+
+mkdir -p $WS_PATH/$RABBITMQ/{data,log,conf}
+/bin/cp -rf ./conf/rabbitmq/conf/* $WS_PATH/$RABBITMQ/conf
 
 #docker-compose up -d
 
