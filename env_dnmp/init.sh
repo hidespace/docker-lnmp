@@ -3,7 +3,7 @@
 WS_PATH=/ws/volumes
 
 NGINX=nginx1.16.1
-PHP72=php7.2.27
+PHP72=php-fpm7.2.27
 MYSQL=mysql5.7.27
 REDIS=redis5.0.9
 RABBITMQ=rabbitmq3.8.4m
