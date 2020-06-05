@@ -10,7 +10,7 @@ services:
         volumes: 
             - /ws/volumes/mysql5.7.27/conf.d:/etc/mysql/conf.d
             - /ws/volumes/mysql5.7.27/data:/var/lib/mysql
-            - /ws/volumes/mysql5.7.27/log:/var/log/mysql/error.log
+            - /ws/volumes/mysql5.7.27/log/error.log:/var/log/mysql/error.log
         environment:
             - MYSQL_ROOT_PASSWORD=q5xt@zX71w
             - TZ=Asia/Shanghai
