@@ -1,1 +1,1 @@
-docker build -t navioo/rabbmitmq:3.8.4m .
+docker build -t navioo/rabbitmq:3.8.4m .
