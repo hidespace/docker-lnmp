@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-APP_PATH=/ws/volumes
-APP_NAME=php-fpm7.2
+WS_PATH=/ws/volumes
+PHP=php-fpm7.2
 
-mkdir -p $APP_PATH/$APP_NAME/log/php-fpm
-touch $APP_PATH/$APP_NAME/log/php-fpm/error.log
-cp -rf ./conf $APP_PATH/$APP_NAME
+mkdir -p $WS_PATH/$PHP/{conf,log}
+touch $WS_PATH/$PHP/log/error.log
+/bin/cp -rf ./conf/* $WS_PATH/$PHP/conf
 
 #docker-compose up -d
 
 
-
-
-mkdir -p $APP_PATH/$APP_NAME/log/php-fpm
-touch $APP_PATH/$APP_NAME/log/php-fpm/error.log
-cp -rf ./conf $APP_PATH/$APP_NAME
