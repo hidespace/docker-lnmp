@@ -1,5 +1,0 @@
-docker build -t navioo/mysql:5.7.27 .
-
-使用类似下面的启动命令外部才能正常连接:
-docker run -itd -p 3306:3306 --name some-mysql -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=123456-abc -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-关键在这几个参数的组合： MYSQL_USER and MYSQL_PASSWORD and（MYSQL_ALLOW_EMPTY_PASSWORD or MYSQL_RANDOM_ROOT_PASSWORD or MYSQL_ONETIME_PASSWORD）
