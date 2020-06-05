@@ -70,16 +70,16 @@ services:
             - TZ=Asia/Shanghai
     rabbitmq:
         image: navioo/rabbitmq:3.8.4m
-            restart: always
-            container_name: rabbitmq3.8.4m
-            tty: true
-            ports:
-                - "5672:5672"
-                - "15672:15672"
-            volumes:
-                - /ws/volumes/rabbitmq3.8.4m/conf:/etc/rabbitmq
-                - /ws/volumes/rabbitmq3.8.4m/data:/var/lib/rabbitmq
-                - /ws/volumes/rabbitmq3.8.4m/log:/var/log/rabbitmq
-            environment:
-                - TZ=Asia/Shanghai
+        restart: always
+        container_name: rabbitmq3.8.4m
+        tty: true
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        volumes:
+            - /ws/volumes/rabbitmq3.8.4m/conf:/etc/rabbitmq
+            - /ws/volumes/rabbitmq3.8.4m/data:/var/lib/rabbitmq
+            - /ws/volumes/rabbitmq3.8.4m/log:/var/log/rabbitmq
+        environment:
+            - TZ=Asia/Shanghai
 
