@@ -1,0 +1,58 @@
+version: "3"
+services: 
+    nginx:
+        image: navioo/nginx:1.16.1
+        restart: always
+        container_name: nginx1.16.1
+        tty: true
+        ports: 
+            - "80:80"
+            - "443:443"
+        volumes: 
+            - /ws/www:/web
+            - /ws/volumes/nginx1.16.1/conf/nginx.conf:/etc/nginx/nginx.conf
+            - /ws/volumes/nginx1.16.1/conf/conf.d:/etc/nginx/conf.d
+            - /ws/volumes/nginx1.16.1/logs:/var/log/nginx
+        environment: 
+            - TZ=Asia/Shanghai
+    php-fpm72:
+        image: navioo/php-fpm:7.2.27
+        restart: always
+        container_name: php-fpm7.2.27
+        tty: true
+        ports: 
+            - "9000:9000"
+        volumes: 
+            - /ws/www:/web
+            - /ws/volumes/php-fpm7.2.27/conf/php.ini:/etc/php.ini
+            - /ws/volumes/php-fpm7.2.27/conf/php-fpm.conf:/etc/php-fpm.conf
+            - /ws/volumes/php-fpm7.2.27/conf/php-fpm.d:/etc/php-fpm.d
+            - /ws/volumes/php-fpm7.2.27/log/php-fpm/error.log:/var/log/php-fpm/error.log
+        environment: 
+            - TZ=Asia/Shanghai
+    mysql57:
+        image: navioo/mysql5.7:1.0
+        restart: always
+        container_name: mysql5.7
+        tty: true
+        ports:
+            - "3306:3306"
+        volumes: 
+            - /ws/volumes/mysql5.7/conf.d:/etc/mysql/conf.d
+            - /ws/volumes/mysql5.7/data:/var/lib/mysql
+        environment: 
+            - MYSQL_ROOT_PASSWORD=root
+            - TZ=Asia/Shanghai
+    redis:
+        image: navioo/redis:5.0.9
+        restart: always
+        container_name: redis5.0.9
+        tty: true
+        ports: 
+            - "6379:6379"
+        volumes: 
+            - /ws/volumes/redis5.0.9/conf/redis.conf:/etc/redis/redis.conf
+            - /ws/volumes/redis5.0.9/data:/data
+        environment: 
+            - TZ=Asia/Shanghai
+

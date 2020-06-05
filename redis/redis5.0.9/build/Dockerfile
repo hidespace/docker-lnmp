@@ -8,7 +8,7 @@ ENV TIME_ZONE Asia/Shanghai
 
 RUN ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime 
 
-COPY conf/redis.conf /etc/redis/redis.conf
+#COPY conf/redis.conf /etc/redis/redis.conf
 
 ENTRYPOINT ["redis-server"]
 

@@ -1,6 +1,6 @@
 version: "3"
 services: 
-    nginx:
+    redis:
         image: navioo/redis:5.0.9
         restart: always
         container_name: redis5.0.9

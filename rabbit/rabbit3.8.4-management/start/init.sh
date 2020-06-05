@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-mkdir -p /ws/volumes/rabbitmq3.8.4/{data, log}
-cp -rf ./conf /ws/volumes/rabbitmq3.8.4
+APP_PATH=/ws/volumes
+APP_NAME=rabbitmq3.8.4m
+
+mkdir -p ${APP_PATH}/${APP_NAME}/{data, log}
+cp -rf ./conf ${APP_PATH}/${APP_NAME}
 
 #docker-compose up -d
 
