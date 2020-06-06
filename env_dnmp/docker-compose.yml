@@ -31,8 +31,7 @@ services:
             - /ws/volumes/php-fpm7.2.27/conf/php.ini:/etc/php.ini
             - /ws/volumes/php-fpm7.2.27/conf/php-fpm.conf:/etc/php-fpm.conf
             - /ws/volumes/php-fpm7.2.27/conf/php-fpm.d:/etc/php-fpm.d
-            - /ws/volumes/php-fpm7.2.27/log:/var/log/php-fpm
-#            - /ws/volumes/php-fpm7.2.27/log/error.log:/var/log/php-fpm/error.log
+            - /ws/volumes/php-fpm7.2.27/log/error.log:/var/log/php-fpm/error.log
         environment:
             - TZ=Asia/Shanghai
         depends_on:
