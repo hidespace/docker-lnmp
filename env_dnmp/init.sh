@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 WS_PATH=/ws/volumes
+WWW_PATH=/ws/www
 
 NGINX=nginx1.16.1
 PHP72=php-fpm7.2.27
@@ -8,6 +9,8 @@ MYSQL=mysql5.7.27
 REDIS=redis5.0.9
 RABBITMQ=rabbitmq3.8.4m
 
+mkdir -p $WWW_PATH
+chown nobody:nobody -R $WWW_PATH
 
 mkdir -p $WS_PATH/$NGINX/{conf,log}
 /bin/cp -rf ./conf/nginx/* $WS_PATH/$NGINX/conf
