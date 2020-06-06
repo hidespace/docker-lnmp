@@ -13,7 +13,7 @@ mkdir -p $WS_PATH/$NGINX/{conf,log}
 /bin/cp -rf ./conf/nginx/* $WS_PATH/$NGINX/conf
 
 mkdir -p $WS_PATH/$PHP72/{conf,log}
-touch $WS_PATH/$PHP72/log/error.log
+#touch $WS_PATH/$PHP72/log/error.log
 /bin/cp -rf ./conf/php/* $WS_PATH/$PHP72/conf
 
 mkdir -p $WS_PATH/$MYSQL/{data,log,conf.d}
