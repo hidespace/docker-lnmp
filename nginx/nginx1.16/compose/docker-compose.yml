@@ -10,6 +10,7 @@ services:
             - "443:443"
         volumes: 
             - /ws/www:/web
+            - /ws/env:/env
             - /ws/volumes/nginx1.16/conf/nginx.conf:/usr/local/nginx/conf/nginx.conf
             - /ws/volumes/nginx1.16/conf/conf.d:/usr/local/nginx/conf/conf.d
             - /ws/volumes/nginx1.16/log:/usr/local/nginx/logs
