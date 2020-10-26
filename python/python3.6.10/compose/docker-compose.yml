@@ -1,0 +1,12 @@
+version: "3"
+services: 
+    python3:
+        image: navioo/python:3.6.10
+        restart: always
+        container_name: python3.6.10
+        tty: true
+        volumes:
+            - /ws/env:/env
+        environment:
+            - TZ=Asia/Shanghai
+
