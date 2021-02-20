@@ -1,0 +1,19 @@
+docker build -t navioo/php-fpm:5.2 .
+
+
+
+./configure --prefix=/usr/local/php --enable-fastcgi \
+--enable-fpm --enable-gd-native-ttf --enable-gd-jis-conv --enable-soap \
+--enable-zip --enable-pcntl --enable-sockets --enable-mbstring --enable-xml \
+--with-bz2 --with-openssl --with-iconv --with-zlib --with-curl \
+--with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-mcrypt \
+--with-mysql --with-mysqli --with-mhash --with-iconv=/usr/local/libiconv \
+--enable-bcmath
+
+
+--with-config-file-path=/usr/local/php-5.2.17/etc
+--with-config-file-scan-dir=/usr/local/php-5.2.17/etc/php.d
+--without-pear
+--with-fpm-conf=/usr/local/php-5.2.17/etc/php-fpm.conf
+--with-fpm-log=/usr/local/php-5.2.17/logs/php-fpm.pid
+--with-fpm-pid=/usr/local/php-5.2.17/logs/php-fpm.log
