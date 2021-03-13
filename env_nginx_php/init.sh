@@ -12,10 +12,10 @@ chown -R nobody:nobody $WWW_PATH
 
 mkdir -p $ENV_PATH
 
-mkdir -p $WS_PATH/$NGINX/{conf, log}
+mkdir -p $WS_PATH/$NGINX/{conf,log}
 /bin/cp -rf ./conf/nginx/* $WS_PATH/$NGINX/conf
 
-mkdir -p $WS_PATH/$PHP72/{conf, log}
+mkdir -p $WS_PATH/$PHP72/{conf,log}
 touch $WS_PATH/$PHP72/log/error.log
 /bin/cp -rf ./conf/php/* $WS_PATH/$PHP72/conf
 
