@@ -29,7 +29,3 @@ systemctl start docker && systemctl enable docker
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-#添加阿里云加速镜像
-echo '{
-    "registry-mirrors": ["https://gmuh42gg.mirror.aliyuncs.com"]
-}' > /etc/docker/daemon.json
