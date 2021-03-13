@@ -1,0 +1,18 @@
+version: "3"
+services: 
+    php-fpm72:
+        image: navioo/php-fpm7.2:1.0
+        restart: always
+        container_name: php-fpm7.2
+        tty: true
+        ports: 
+            - "9000:9000"
+        volumes: 
+            - /ws/www:/web
+            - /ws/volumes/php-fpm7.2/conf/php.ini:/etc/php.ini
+            - /ws/volumes/php-fpm7.2/conf/php-fpm.conf:/etc/php-fpm.conf
+            - /ws/volumes/php-fpm7.2/conf/php-fpm.d:/etc/php-fpm.d
+            - /ws/volumes/php-fpm7.2/log/error.log:/var/log/php-fpm/error.log
+        environment: 
+            - TZ=Asia/Shanghai
+
