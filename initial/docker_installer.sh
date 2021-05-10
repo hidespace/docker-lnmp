@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 ##安装docker
 #卸载干净docker相关程序
 yum remove docker \
@@ -42,4 +43,6 @@ sudo systemctl restart docker
 #安装docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+
 
