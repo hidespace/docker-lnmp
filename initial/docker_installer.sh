@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-##安装git
-yum install -y git
-
 ##安装docker
 #卸载干净docker相关程序
 yum remove docker \
