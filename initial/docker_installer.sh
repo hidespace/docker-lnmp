@@ -20,9 +20,26 @@ yum makecache fast
 
 yum install -y docker-ce docker-ce-cli containerd.io
 
-systemctl start docker && systemctl enable docker
+sudo systemctl start docker && sudo systemctl enable docker
+
+
+#配置镜像加速
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://reg-mirror.qiniu.com"
+  ]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
 
 #安装docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
