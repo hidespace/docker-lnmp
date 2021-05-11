@@ -5,12 +5,13 @@ WWW_PATH=/ws/www
 NGINX=nginx1.16.1
 PHP=php-fpm7.2.27
 
-chown -R nobody:nobody $WWW_PATH
-mkdir -p $VOL_PATH/$NGINX/{conf,log}
-mkdir -p $VOL_PATH/$PHP/{conf,log}
+mkdir -p $VOL_PATH/$NGINX/{conf,log} && /bin/cp -rf ./conf/nginx/* $VOL_PATH/$NGINX/conf
+mkdir -p $VOL_PATH/$PHP/{conf,log} && /bin/cp -rf ./conf/php/* $VOL_PATH/$PHP/conf
 
-chmod a+rwx $VOL_PATH/$NGINX
-chmod a+rwx $VOL_PATH/$PHP
+chmod a+rwx $VOL_PATH/$NGINX/*
+chmod a+rwx $VOL_PATH/$PHP/*
+chown -R nobody:nobody $WWW_PATH
+
 
 docker network create network_lnmp
 
