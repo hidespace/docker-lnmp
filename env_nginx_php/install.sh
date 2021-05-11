@@ -8,8 +8,8 @@ PHP=php-fpm7.2.27
 mkdir -p $VOL_PATH/$NGINX/{conf,log} && /bin/cp -rf ./conf/nginx/* $VOL_PATH/$NGINX/conf
 mkdir -p $VOL_PATH/$PHP/{conf,log} && /bin/cp -rf ./conf/php/* $VOL_PATH/$PHP/conf
 
-chmod a+rwx $VOL_PATH/$NGINX/*
-chmod a+rwx $VOL_PATH/$PHP/*
+chmod -R a+rwx $VOL_PATH/$NGINX/*
+chmod -R a+rwx $VOL_PATH/$PHP/*
 chown -R nobody:nobody $WWW_PATH
 
 
