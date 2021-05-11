@@ -11,8 +11,6 @@ services:
         volumes: 
             - /ws/www:/web
             - /ws/env:/env
-#            - /ws/volumes/nginx1.16.1/conf/nginx.conf:/etc/nginx/nginx.conf
-#            - /ws/volumes/nginx1.16.1/conf/conf.d:/etc/nginx/conf.d
             - /ws/volumes/nginx1.16.1/conf:/etc/nginx
             - /ws/volumes/nginx1.16.1/log:/var/log/nginx
         environment: 
