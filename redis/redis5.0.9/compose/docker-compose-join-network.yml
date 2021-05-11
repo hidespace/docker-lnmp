@@ -1,0 +1,20 @@
+version: "3"
+services: 
+    redis:
+        image: navioo/redis:5.0.9
+        restart: always
+        container_name: redis5.0.9
+        tty: true
+        ports: 
+            - "6379:6379"
+        volumes: 
+            - /ws/volumes/redis5.0.9/conf/redis.conf:/etc/redis/redis.conf
+            - /ws/volumes/redis5.0.9/data:/data
+        environment: 
+            - TZ=Asia/Shanghai
+        networks:
+            - network_lnmp
+networks:
+  network_lnmp:
+      external: true
+
