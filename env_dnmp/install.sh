@@ -4,12 +4,16 @@ function make_path () {
     for path in $*;
     do
         if [ -d $path ]; then
-            rm -rf $path
+            if [ $path = '/' ]; then
+                echo "forbidden: 'rm -rf /'"
+                exit
+            else
+                rm -rf $path
+            fi
         fi
         mkdir -p $path
     done
 }
-
 
 
 VOL_PATH=/ws/volumes
