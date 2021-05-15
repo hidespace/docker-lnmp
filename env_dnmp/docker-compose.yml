@@ -38,7 +38,7 @@ services:
             - mysql
             - redis
             - rabbitmq
-        networks
+        networks: 
             - network_lnmp
     mysql:
         image: navioo/mysql:5.7.27
@@ -54,6 +54,8 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=q5xt@zX71w
             - TZ=Asia/Shanghai
+        networks: 
+            - network_lnmp
     redis:
         image: navioo/redis:5.0.9
         restart: always
@@ -66,7 +68,7 @@ services:
             - /ws/volumes/redis5.0.9/data:/data
         environment: 
             - TZ=Asia/Shanghai
-        network_lnmp
+        networks: 
             - network_lnmp
     rabbitmq:
         image: navioo/rabbitmq:3.8.4m
