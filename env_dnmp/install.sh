@@ -34,9 +34,9 @@ cd /ws/docker/docker-lnmp/env_dnmp
 
 /bin/cp -rf ./conf/nginx/* $VOL_PATH/$NGINX/conf
 /bin/cp -rf ./conf/php/* $VOL_PATH/$PHP/conf
-/bin/cp -rf ./conf/mysql/conf.d/* $WS_PATH/$MYSQL/conf.d
-/bin/cp -rf ./conf/redis/conf/* $WS_PATH/$REDIS/conf
-/bin/cp -rf ./conf/rabbitmq/conf/* $WS_PATH/$RABBITMQ/conf
+/bin/cp -rf ./conf/mysql/conf.d/* $VOL_PATH/$MYSQL/conf.d
+/bin/cp -rf ./conf/redis/conf/* $VOL_PATH/$REDIS/conf
+/bin/cp -rf ./conf/rabbitmq/conf/* $VOL_PATH/$RABBITMQ/conf
 
 chmod -R a+rwx $VOL_PATH/$NGINX/*
 chmod -R a+rwx $VOL_PATH/$PHP/*
