@@ -3,15 +3,20 @@
 
 ##安装docker
 #卸载干净docker相关程序
-yum remove docker \
+yum remove -y docker \
     docker-client \
     docker-client-latest \
     docker-common \
     docker-latest \
     docker-latest-logrotate \
     docker-logrotate \
-    docker-engine
+    docker-selinux \
+    docker-engine-selinux \
+    docker-engine 
+    
+yum remove -y docker-ce docker-ce-cli containerd.io && rm -f /usr/local/bin/docker-compose
 
+    
 #安装工具
 yum install -y yum-utils device-mapper-persistent-data ivm2
 
