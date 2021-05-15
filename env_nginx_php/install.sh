@@ -7,12 +7,12 @@ PHP=php-fpm7.2.27
 
 mkdir -p $VOL_PATH/$NGINX/{conf,log} && /bin/cp -rf ./conf/nginx/* $VOL_PATH/$NGINX/conf
 mkdir -p $VOL_PATH/$PHP/{conf,log} && /bin/cp -rf ./conf/php/* $VOL_PATH/$PHP/conf
-touch $VOL_PATH/$PHP/log/error.log
 
 chmod -R a+rwx $VOL_PATH/$NGINX/*
 chmod -R a+rwx $VOL_PATH/$PHP/*
 chown -R nobody:nobody $WWW_PATH
 
+exit
 
 docker network create network_lnmp
 

@@ -45,6 +45,7 @@ chmod -R a+rwx $VOL_PATH/$REDIS/*
 chmod -R a+rwx $VOL_PATH/$RABBITMQ/*
 chown -R nobody:nobody $WWW_PATH
 
+exit
 
 docker network create network_lnmp
 
