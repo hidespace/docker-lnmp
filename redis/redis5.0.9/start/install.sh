@@ -11,7 +11,7 @@ PASS_DEFAULT=so7X@co9Wp
 PASS_REPLACE=
 
 if [[ $PASS_REPLACE != '' ]]; then
-    sed -i "s/$PASS_DEFAULT/$PASS_REPLACE" $VOL_PATH/$REDIS/conf/redis.conf
+    sed -i "s/$PASS_DEFAULT/$PASS_REPLACE/" $VOL_PATH/$REDIS/conf/redis.conf
 fi
 
 
