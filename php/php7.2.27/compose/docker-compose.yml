@@ -7,12 +7,6 @@ services:
         tty: true
         ports: 
             - "9000:9000"
-<<<<<<< HEAD
-#            - "9001:9001"
-#            - "9002:9002"
-#            - "5601:5601"
-=======
->>>>>>> bb885c07d9948cab7df0234804715125b7eef718
         volumes: 
             - /ws/www:/web
             - /ws/volumes/php-fpm7.2.27/conf/php.ini:/etc/php.ini
@@ -21,12 +15,3 @@ services:
             - /ws/volumes/php-fpm7.2.27/log/error.log:/var/log/php-fpm/error.log
         environment: 
             - TZ=Asia/Shanghai
-<<<<<<< HEAD
-#        networks:
-#            - env_dnmp_default
-#networks:
-#        env_dnmp_default:
-#            external: true
-=======
-
->>>>>>> bb885c07d9948cab7df0234804715125b7eef718
