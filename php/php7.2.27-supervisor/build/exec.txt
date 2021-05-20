@@ -1,0 +1,8 @@
+docker build -t navioo/php-cli:7.2.27-supervisor .
+
+php-cli
+    redis
+    amqp
+    swoole
+    ...
+supervisor
