@@ -21,6 +21,7 @@ RUN curl -fsSL https://pecl.php.net/get/swoole-4.6.7.tgz -o swoole.tgz \
 && mkdir -p /usr/src/php/ext/swoole \
 && tar -xf swoole.tgz -C /usr/src/php/ext/swoole --strip-components=1 \
 && rm swoole.tgz \
+&& apk add --no-cache libstdc++ \
 && docker-php-ext-install swoole \
 && docker-php-source delete
 
