@@ -19,10 +19,11 @@ crontab.sh
 
 chmod 600 crontab.sh
 
+
 docker run -dit --name php-cli7.2-supv-cron \
 -v /ws/volumes/php-cli7.2-supv-cron/supervisord.conf:/etc/supervisord.conf \
 -v /ws/volumes/php-cli7.2-supv-cron/supervisor.d:/etc/supervisor.d \
 -v /ws/volumes/php-cli7.2-supv-cron/log:/var/log \
--v /ws/crontab/crontab.sh:/var/spool/cron/crontabs/root \
+-v /ws/volumes/php-cli7.2-supv-cron/crontab/crontab.sh:/var/spool/cron/crontabs/root \
 -v /ws/www:/web \
 navioo/php-cli:7.2-supv-cron
