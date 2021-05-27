@@ -17,8 +17,6 @@ crontab.sh
 
 >>>
 
-chmod 600 crontab.sh
-
 
 docker run -dit --name php-cli7.2-supv-cron \
 -v /ws/volumes/php-cli7.2-supv-cron/supervisord.conf:/etc/supervisord.conf \
