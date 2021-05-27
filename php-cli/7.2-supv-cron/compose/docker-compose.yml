@@ -1,0 +1,17 @@
+version: "3"
+services: 
+    php-cli-supv:
+        image: navioo/php-cli:7.2-supv-cron
+        restart: always
+        container_name: php-cli7.2-supv-cron
+        tty: true
+        volumes:
+            - /ws/volumes/php-cli7.2-supv-cron/supervisord.conf:/etc/supervisord.conf
+            - /ws/volumes/php-cli7.2-supv-cron/supervisor.d:/etc/supervisor.d
+            - /ws/volumes/php-cli7.2-supv-cron/log:/var/log
+            - /ws/volumes/php-cli7.2-supv-cron/crontabs/root:/var/spool/cron/crontabs/root
+            - /ws/www:/web
+        environment: 
+            - TZ=Asia/Shanghai
+
+    
