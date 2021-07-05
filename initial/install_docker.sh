@@ -51,4 +51,4 @@ curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compo
 sudo chmod +x /usr/local/bin/docker-compose
 
 
-
+mkdir -p /ws/{docker,env,volumes,www} 

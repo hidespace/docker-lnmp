@@ -1,11 +1,6 @@
-#!/usr/bin/env bash
+# yum install -y git vim
 
-
-mkdir -p /ws/{docker,env,volumes,www} 
-
-# cd /ws/docker
-
-# yum install -y git
+# mkdir -p /ws/docker && cd /ws/docker
 
 # git clone https://github.com/hidespace/docker-lnmp.git
 # git clone https://gitee.com/hidespace/docker-lnmp.git
